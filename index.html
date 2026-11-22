@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-ReX Publishers — Enterprise Healthcare Software & Workstation Suites</title>
+    <meta name="description" content="T-ReX Publishers delivers robust, zero-cloud clinical software suites. Download TReX HIS Lite: outpatient registration, cardiology reporting, pharmacy management, and billing workstation.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+
+    <!-- Fonts & Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        trex: {
+                            cyan: '#00D2FF',
+                            cyanDark: '#0284C7',
+                            orange: '#FF6B00',
+                            orangeDark: '#EA580C',
+                            slate: '#0A0E17',
+                            surface: '#111827',
+                            border: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-cyan {
+            box-shadow: 0 0 35px -5px rgba(0, 210, 255, 0.35);
+        }
+        .glow-orange {
+            box-shadow: 0 0 35px -5px rgba(255, 107, 0, 0.35);
+        }
+        .gradient-brand {
+            background: linear-gradient(135deg, #00D2FF 0%, #0284C7 50%, #FF6B00 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #00D2FF 0%, #38BDF8 60%, #FF8A3D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-[#0A0E17] text-slate-100 font-sans antialiased selection:bg-[#00D2FF]/20 selection:text-[#00D2FF] transition-colors duration-300">
+
+    <!-- Ambient Glow Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#00D2FF]/10 rounded-full blur-[140px]"></div>
+        <div class="absolute top-[600px] -right-40 w-[500px] h-[500px] bg-[#FF6B00]/10 rounded-full blur-[140px]"></div>
+        <div class="absolute inset-0 bg-grid opacity-80"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0A0E17]/80 border-b border-white/5 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <a href="#hero" class="flex items-center gap-3.5 group">
+                    <div class="w-11 h-11 rounded-xl p-1 bg-gradient-to-br from-[#00D2FF]/20 to-[#FF6B00]/20 border border-white/10 flex items-center justify-center shadow-lg shadow-[#00D2FF]/10 group-hover:scale-105 transition-transform">
+                        <img src="assets/logo.png" alt="T-ReX Publishers Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+                            T-ReX <span class="text-[#00D2FF]">Publishers</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Clinical Systems Publishing</span>
+                    </div>
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                    <a href="#products" class="hover:text-[#00D2FF] transition-colors">Products</a>
+                    <a href="#features" class="hover:text-[#00D2FF] transition-colors">HIS Lite Features</a>
+                    <a href="#download" class="hover:text-[#00D2FF] transition-colors">Downloads</a>
+                    <a href="#licensing" class="hover:text-[#00D2FF] transition-colors">Licensing Guide</a>
+                    <a href="#contact" class="hover:text-[#00D2FF] transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <button type="button" onclick="toggleTheme()" class="p-2.5 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition-colors text-slate-300" title="Toggle Theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <a href="#download" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#00D2FF] to-[#0284C7] hover:from-[#38BDF8] hover:to-[#0369A1] text-slate-950 font-extrabold text-xs tracking-wider uppercase shadow-lg shadow-[#00D2FF]/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        <span>Get HIS Lite</span>
+                        <span>↓</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="pt-20 pb-24 lg:pt-28 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- Pill Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Official Software Release • v1.0.0</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight max-w-4xl mx-auto leading-[1.1] mb-6">
+                    Next-Generation Hospital Software by <span class="text-gradient">T-ReX Publishers</span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-base sm:text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+                    Engineered for high-throughput outpatient centers, cardiology clinics, and day-care hospitals. 100% offline HMAC-SHA256 licensing, zero Python runtime requirements, and instantaneous local response times.
+                </p>
+
+                <!-- Primary CTAs -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-14">
+                    <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#00D2FF] via-[#38BDF8] to-[#0284C7] text-slate-950 font-black text-sm tracking-wide shadow-xl shadow-[#00D2FF]/25 hover:scale-105 active:scale-95 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download TReX HIS Lite (v1.0.0)</span>
+                    </a>
+                    <a href="#features" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold text-sm transition-all">
+                        <span>Explore Capabilities</span>
+                        <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Specifications Quick Badges -->
+                <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-bold text-slate-400 pt-6 border-t border-white/5">
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#00D2FF]">✓</span> Standalone Windows Setup (.exe)
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#00D2FF]">✓</span> Zero Python Required
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#00D2FF]">✓</span> Air-Gapped Offline Ready
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#FF6B00]">✓</span> HMAC-SHA256 Cryptographic Verification
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="text-[#00D2FF]">✓</span> Ultra-Low 120MB RAM Footprint
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT SPOTLIGHT -->
+        <section id="products" class="py-20 border-t border-white/5 bg-white/[0.01]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-black uppercase tracking-widest text-[#00D2FF]">Flagship Publication</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
+                        TReX HIS Lite (Edition 2026)
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base">
+                        A complete clinical suite combining front-desk patient reception, multi-item invoicing, diagnostic reporting, and inventory control in one ultra-responsive desktop application.
+                    </p>
+                </div>
+
+                <!-- 4 Core Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card rounded-3xl p-7 border border-white/10 hover:border-[#00D2FF]/40 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl bg-[#00D2FF]/10 border border-[#00D2FF]/20 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                            🛎️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Outpatient Reception</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Rapid patient registration, UHID mapping, doctor token scheduling, and dual-purpose compact OP slip generation.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card rounded-3xl p-7 border border-white/10 hover:border-[#00D2FF]/40 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                            🧾
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Itemized Billing</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Comprehensive tariff directory, multi-mode payments (Cash, UPI, Card), thermal cut receipts, and consolidated daily financial audit ledgers.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card rounded-3xl p-7 border border-white/10 hover:border-[#FF6B00]/40 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FF6B00]/10 border border-[#FF6B00]/20 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                            🫀
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Cardiology & 2D Echo</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            41+ hemodynamic chamber parameters, automated BSA/LVEDD calculations, custom normal presets, and vector-clean PDF printouts.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-card rounded-3xl p-7 border border-white/10 hover:border-emerald-500/40 transition-all hover:-translate-y-1 group">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+                            💊
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">In-House Pharmacy</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Real-time medicine dispensation, stock batch tracking, expiry alerts, doctor commission splits, and POS counter receipts.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOAD CARD & SPECIFICATIONS -->
+        <section id="download" class="py-24 border-t border-white/5">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="relative glass-card rounded-3xl p-8 sm:p-12 border border-[#00D2FF]/30 glow-cyan overflow-hidden">
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-[#00D2FF]/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                        <div class="space-y-4 text-center lg:text-left max-w-xl">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#00D2FF]/10 border border-[#00D2FF]/30 text-[#00D2FF] text-xs font-black uppercase tracking-wider">
+                                Verified Distribution Package
+                            </div>
+                            <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                                Download TReX HIS Lite Installer
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Complete Windows native setup package. Bundles embedded runtime, ReportLab vector typography, QR generation engine, and pristine clinical catalogs.
+                            </p>
+
+                            <!-- Metadata Info -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
+                                <div class="bg-black/30 p-2.5 rounded-xl border border-white/5">
+                                    <span class="text-slate-500 block text-[10px] uppercase font-bold">Release</span>
+                                    <span class="font-bold text-white font-mono">v1.0.0 (Production)</span>
+                                </div>
+                                <div class="bg-black/30 p-2.5 rounded-xl border border-white/5">
+                                    <span class="text-slate-500 block text-[10px] uppercase font-bold">File Size</span>
+                                    <span class="font-bold text-white font-mono">30.64 MB</span>
+                                </div>
+                                <div class="bg-black/30 p-2.5 rounded-xl border border-white/5 col-span-2 sm:col-span-1">
+                                    <span class="text-slate-500 block text-[10px] uppercase font-bold">Platform</span>
+                                    <span class="font-bold text-white">Windows 10 / 11 (64/32-bit)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Big Download Button -->
+                        <div class="flex flex-col items-center gap-3 w-full sm:w-auto">
+                            <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="w-full sm:w-64 py-5 px-8 rounded-2xl bg-gradient-to-r from-[#00D2FF] via-[#38BDF8] to-[#0284C7] hover:scale-105 active:scale-95 text-slate-950 font-black text-sm tracking-wide text-center shadow-2xl shadow-[#00D2FF]/30 transition-all flex items-center justify-center gap-3 cursor-pointer">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                <span>Download Setup.exe</span>
+                            </a>
+                            <span class="text-[11px] text-slate-400">Zero Dependencies Required</span>
+                        </div>
+                    </div>
+
+                    <!-- Cryptographic SHA256 Verification Card -->
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-black/40 p-3.5 rounded-2xl border border-white/5">
+                            <div class="min-w-0 flex-1">
+                                <span class="text-[10px] text-slate-500 uppercase font-black tracking-wider block">SHA-256 Checksum (Integrity Verification)</span>
+                                <code class="text-xs text-emerald-400 font-mono select-all truncate block">AE8827B81F05E25E8857E94F0512EFBE024332A24E87612A4045CF837EA01DF0</code>
+                            </div>
+                            <button onclick="copyChecksum()" id="copyHashBtn" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 flex-shrink-0">
+                                <span>📋</span>
+                                <span>Copy Hash</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ACTIVATION & GETTING STARTED WORKFLOW -->
+        <section id="licensing" class="py-20 border-t border-white/5 bg-white/[0.01]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-black uppercase tracking-widest text-[#FF6B00]">Onboarding Architecture</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
+                        How Activation Works on First Boot
+                    </h2>
+                    <p class="text-slate-400 text-sm">
+                        TReX HIS Lite utilizes an offline cryptographic license verification model. No phone-home, telemetry, or internet access required.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="glass-card rounded-3xl p-7 border border-white/10">
+                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-black text-[#00D2FF] mb-4">
+                            1
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Run the Installer</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Double click <code class="text-slate-300 bg-white/5 px-1 py-0.5 rounded">TReX_HIS_Lite_Setup.exe</code>. Setup creates desktop shortcuts and configures folder write permissions automatically.
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-7 border border-white/10">
+                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-black text-[#FF6B00] mb-4">
+                            2
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">First Boot Activation</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Launch the workstation. The <strong>Product Activation</strong> modal greets you. Enter your <strong>Hospital Legal Entity Name</strong> and 20-character Product License Key.
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-7 border border-white/10">
+                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-black text-emerald-400 mb-4">
+                            3
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-2">Instant Unlock</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            The offline HMAC-SHA256 signature unlocks Reception, Billing, Cardiology, and Pharmacy instantly. Login with <code class="text-slate-300 bg-white/5 px-1 py-0.5 rounded">admin</code> / <code class="text-slate-300 bg-white/5 px-1 py-0.5 rounded">admin</code>.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT / INQUIRY SECTION -->
+        <section id="contact" class="py-20 border-t border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="w-14 h-14 rounded-2xl mx-auto mb-6 p-2 bg-gradient-to-br from-[#00D2FF]/20 to-[#FF6B00]/20 border border-white/10 flex items-center justify-center shadow-lg">
+                    <img src="assets/logo.png" alt="T-ReX Logo" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Connect with T-ReX Publishers
+                </h3>
+                <p class="text-sm text-slate-400 max-w-xl mx-auto mb-8">
+                    Inquire about custom hospital template engineering, node-locked enterprise multi-terminal licenses, or hospital hardware integrations.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="mailto:support@trexpublishers.com?subject=TReX%20HIS%20Lite%20Inquiry" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10 text-white font-bold text-xs tracking-wider uppercase transition-colors flex items-center gap-2">
+                        <span>✉️</span>
+                        <span>support@trexpublishers.com</span>
+                    </a>
+                    <a href="https://github.com/AsifRyzen/trex-his-lite" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white font-bold text-xs tracking-wider uppercase transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        <span>GitHub Repository</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-black/60 relative z-10 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="T-ReX Logo" class="w-5 h-5 object-contain">
+                <span class="font-bold text-slate-400">T-ReX Publishers</span>
+                <span>•</span>
+                <span>Enterprise Clinical Workstation Architecture</span>
+            </div>
+            <div>
+                © 2026 T-ReX Publishers. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy Checksum Script & Theme Toggle -->
+    <script>
+        function copyChecksum() {
+            const hash = "AE8827B81F05E25E8857E94F0512EFBE024332A24E87612A4045CF837EA01DF0";
+            navigator.clipboard.writeText(hash).then(() => {
+                const btn = document.getElementById('copyHashBtn');
+                btn.innerHTML = '<span>✓</span> <span>Copied!</span>';
+                btn.classList.add('text-emerald-400', 'border-emerald-500/40');
+                setTimeout(() => {
+                    btn.innerHTML = '<span>📋</span> <span>Copy Hash</span>';
+                    btn.classList.remove('text-emerald-400', 'border-emerald-500/40');
+                }, 2500);
+            });
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                if (icon) icon.innerText = '☀️';
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                if (icon) icon.innerText = '🌙';
+            }
+        }
+    </script>
+</body>
+</html>
