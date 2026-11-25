@@ -3,40 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-ReX Publishers — Enterprise Healthcare Software Suite</title>
-    <meta name="description" content="T-ReX Publishers engineers mission-critical clinical software: TReX HIS Lite, TReX HIS Enterprise, and TReXLab Pro Diagnostic LIS. Ultra-fast, zero-cloud dependency, offline HMAC licensing.">
+    <title>TReX Publishers — Healthcare Software Suite</title>
+    <meta name="description" content="Clinical software engineered by TReX Publishers: TReX HIS Lite, TReX HIS Enterprise, and TReXLab Pro. Fast, reliable, offline-first software for clinics, hospitals, and laboratories.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="shortcut icon" href="assets/favicon.ico">
 
-    <!-- Fonts & Tailwind CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            cyan: '#00D4FF',
-                            cyanHover: '#38BDF8',
-                            cyanDark: '#0284C7',
-                            orange: '#FF6B00',
-                            orangeHover: '#FB923C',
-                            orangeDark: '#EA580C',
-                            emerald: '#10B981',
-                            purple: '#A855F7',
-                            dark: '#060911',
-                            card: '#0B111E',
-                            cardElevated: '#111A2E',
-                            border: 'rgba(255, 255, 255, 0.08)',
-                            borderHover: 'rgba(0, 212, 255, 0.35)'
-                        }
+                        ink: '#1D1D1F',
+                        muted: '#6E6E73',
+                        surface: '#F5F5F7',
+                        hairline: '#D2D2D7',
+                        accent: '#0071E3',
+                        accentHover: '#0077ED'
                     },
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace']
+                        sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
                     }
                 }
             }
@@ -44,763 +34,616 @@
     </script>
     <style>
         body {
-            background-color: #060911;
-            color: #F1F5F9;
+            background-color: #FFFFFF;
+            color: #1D1D1F;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .glow-cyan {
-            box-shadow: 0 0 40px -8px rgba(0, 212, 255, 0.28);
+        .display-tight {
+            letter-spacing: -0.025em;
         }
-        .glow-orange {
-            box-shadow: 0 0 40px -8px rgba(255, 107, 0, 0.28);
-        }
-        .glow-emerald {
-            box-shadow: 0 0 40px -8px rgba(16, 185, 129, 0.25);
-        }
-        .glow-purple {
-            box-shadow: 0 0 40px -8px rgba(168, 85, 247, 0.25);
-        }
-        .text-gradient-cyan {
-            background: linear-gradient(135deg, #00D4FF 0%, #38BDF8 50%, #93C5FD 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .text-gradient-brand {
-            background: linear-gradient(135deg, #00D4FF 0%, #38BDF8 40%, #FF8A3D 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .bg-mesh {
-            background-size: 48px 48px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-        }
-        .glass-panel {
-            background: rgba(11, 17, 30, 0.82);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-        .glass-panel-elevated {
-            background: rgba(17, 26, 46, 0.9);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .glass-pill {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .apple-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-[#00D4FF]/20 selection:text-[#00D4FF]">
+<body class="font-sans antialiased selection:bg-[#0071E3]/15 selection:text-[#0071E3]">
 
-    <!-- Ambient Illumination Layers -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute -top-48 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#00D4FF]/[0.08] rounded-full blur-[160px]"></div>
-        <div class="absolute top-[800px] -left-48 w-[600px] h-[600px] bg-[#FF6B00]/[0.07] rounded-full blur-[160px]"></div>
-        <div class="absolute top-[1600px] -right-48 w-[700px] h-[700px] bg-[#A855F7]/[0.06] rounded-full blur-[160px]"></div>
-        <div class="absolute inset-0 bg-mesh opacity-90"></div>
-    </div>
+    <!-- Clean Minimal Navigation Bar -->
+    <header class="sticky top-0 z-50 apple-nav border-b border-[#E5E5EA]">
+        <div class="max-w-[1080px] mx-auto px-5 sm:px-6">
+            <div class="flex items-center justify-between h-14">
 
-    <!-- Pinned Executive Navigation Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-2xl bg-[#060911]/85 border-b border-white/[0.06]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Brand / Publisher Identity -->
-                <a href="#hero" class="flex items-center gap-3.5 group">
-                    <div class="w-11 h-11 rounded-xl p-1 bg-gradient-to-br from-[#00D4FF]/20 via-[#0284C7]/20 to-[#FF6B00]/20 border border-white/10 flex items-center justify-center shadow-lg shadow-[#00D4FF]/10 group-hover:scale-105 transition-transform">
-                        <img src="assets/logo.png" alt="T-ReX Publishers Logo" class="w-full h-full object-contain">
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
-                            T-ReX <span class="text-[#00D4FF]">Publishers</span>
-                        </span>
-                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Enterprise Clinical Software Suite</span>
-                    </div>
+                <!-- Brand -->
+                <a href="#hero" class="flex items-center gap-2.5 text-[#1D1D1F] hover:opacity-80 transition-opacity">
+                    <img src="assets/logo.png" alt="TReX Publishers" class="w-7 h-7 object-contain rounded-md">
+                    <span class="text-[15px] font-semibold tracking-tight">TReX Publishers</span>
                 </a>
 
-                <!-- Navigation Directory -->
-                <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-300">
-                    <a href="#software-suite" class="hover:text-[#00D4FF] transition-colors flex items-center gap-1.5">
-                        <span>Software Catalog</span>
-                        <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-[#00D4FF]/10 text-[#00D4FF] font-bold">3 Apps</span>
-                    </a>
-                    <a href="#his-lite" class="hover:text-[#00D4FF] transition-colors">TReX HIS Lite</a>
-                    <a href="#his-enterprise" class="hover:text-[#00D4FF] transition-colors">TReX HIS Enterprise</a>
-                    <a href="#lab-pro" class="hover:text-[#00D4FF] transition-colors">TReXLab Pro</a>
-                    <a href="#matrix" class="hover:text-[#00D4FF] transition-colors">Compare Suites</a>
-                    <a href="#downloads" class="hover:text-[#00D4FF] transition-colors">Downloads</a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-[13px] font-normal text-[#1D1D1F]/80">
+                    <a href="#his-lite" class="hover:text-[#1D1D1F] transition-colors">HIS Lite</a>
+                    <a href="#his-enterprise" class="hover:text-[#1D1D1F] transition-colors">HIS Enterprise</a>
+                    <a href="#lab-pro" class="hover:text-[#1D1D1F] transition-colors">TReXLab Pro</a>
+                    <a href="#matrix" class="hover:text-[#1D1D1F] transition-colors">Compare</a>
+                    <a href="#downloads" class="hover:text-[#1D1D1F] transition-colors">Download</a>
+                    <a href="#contact" class="hover:text-[#1D1D1F] transition-colors">Contact</a>
                 </nav>
 
-                <!-- Actions -->
+                <!-- Action + Mobile Toggle -->
                 <div class="flex items-center gap-3">
-                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-xs font-bold text-slate-200 transition-colors">
-                        <span>Contact Enterprise Sales</span>
+                    <a href="#downloads" class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white text-[12px] font-medium transition-colors">
+                        Download
                     </a>
-                    <a href="#downloads" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#00D4FF] to-[#0284C7] hover:from-[#38BDF8] hover:to-[#0369A1] text-slate-950 font-extrabold text-xs tracking-wider uppercase shadow-lg shadow-[#00D4FF]/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                        <span>Download HIS Lite</span>
-                        <span>↓</span>
-                    </a>
+                    <button type="button" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="md:hidden p-1.5 rounded-lg text-[#1D1D1F] hover:bg-[#F5F5F7] transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 7h16M4 12h16M4 17h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <nav id="mobileNav" class="hidden md:hidden pb-4 pt-2 border-t border-[#E5E5EA] flex flex-col gap-2 text-[14px] font-medium text-[#1D1D1F]">
+                <a href="#his-lite" onclick="closeMobileMenu()" class="py-1.5">TReX HIS Lite</a>
+                <a href="#his-enterprise" onclick="closeMobileMenu()" class="py-1.5">TReX HIS Enterprise</a>
+                <a href="#lab-pro" onclick="closeMobileMenu()" class="py-1.5">TReXLab Pro</a>
+                <a href="#matrix" onclick="closeMobileMenu()" class="py-1.5">Compare Editions</a>
+                <a href="#downloads" onclick="closeMobileMenu()" class="py-1.5">Download</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="py-1.5">Contact Sales</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content Stream -->
-    <main class="relative z-10">
+    <main>
 
-        <!-- HERO SECTION -->
-        <section id="hero" class="pt-20 pb-20 lg:pt-28 lg:pb-28 text-center overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill mb-8">
-                    <span class="w-2 h-2 rounded-full bg-[#00D4FF] animate-pulse"></span>
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-300">T-ReX Publishers • Clinical Software Portfolio</span>
-                </div>
-
-                <!-- Headline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight max-w-5xl mx-auto leading-[1.08] mb-6">
-                    Enterprise Healthcare Software by <span class="text-gradient-brand">T-ReX Publishers</span>
-                </h1>
-
-                <!-- Subheadline -->
-                <p class="text-base sm:text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-                    Publishing high-velocity, air-gapped hospital suites, diagnostic laboratory automation, and clinical workstations. Engineered with offline HMAC-SHA256 licensing and zero cloud dependencies for maximum hospital data sovereignty.
+        <!-- HERO -->
+        <section id="hero" class="pt-20 pb-20 sm:pt-28 sm:pb-24 bg-white">
+            <div class="max-w-[980px] mx-auto px-5 sm:px-6 text-center">
+                <p class="text-[13px] font-semibold uppercase tracking-[0.08em] text-[#6E6E73] mb-3">
+                    TReX Publishers • Healthcare Suite
                 </p>
 
-                <!-- CTAs -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto mb-16">
-                    <a href="#software-suite" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#00D4FF] via-[#38BDF8] to-[#0284C7] text-slate-950 font-black text-sm tracking-wide shadow-xl shadow-[#00D4FF]/25 hover:scale-105 active:scale-95 transition-all">
-                        <span>Explore 3 Software Editions</span>
-                        <span>→</span>
+                <h1 class="display-tight text-4xl sm:text-6xl font-bold text-[#1D1D1F] leading-[1.08] mb-5">
+                    Clinical software built to run smoothly on your own desk.
+                </h1>
+
+                <p class="text-lg sm:text-xl text-[#6E6E73] max-w-2xl mx-auto leading-relaxed mb-9 font-normal">
+                    Fast, offline-first systems for outpatient clinics, cardiology workstations, multi-specialty hospitals, and pathology labs. No monthly cloud dependency.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+                    <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white text-[15px] font-medium transition-colors">
+                        Download HIS Lite for Windows
                     </a>
-                    <a href="#downloads" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold text-sm transition-all">
-                        <svg class="w-4 h-4 text-[#00D4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                        <span>Download HIS Lite Setup (.exe)</span>
+                    <a href="#software-suite" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#D2D2D7] hover:border-[#86868B] text-[#1D1D1F] text-[15px] font-medium transition-colors">
+                        Explore all products
                     </a>
                 </div>
 
-                <!-- 4 Highlights Strip -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
-                    <div class="glass-panel rounded-2xl p-4 border border-white/5">
-                        <span class="text-xs text-[#00D4FF] font-bold uppercase tracking-wider block mb-1">Architecture</span>
-                        <span class="text-sm font-extrabold text-white">100% Native & Air-Gapped</span>
-                        <p class="text-[11px] text-slate-400 mt-1">Runs strictly on local premises with no external telemetry.</p>
-                    </div>
-                    <div class="glass-panel rounded-2xl p-4 border border-white/5">
-                        <span class="text-xs text-[#FF6B00] font-bold uppercase tracking-wider block mb-1">Security</span>
-                        <span class="text-sm font-extrabold text-white">HMAC-SHA256 Cryptography</span>
-                        <p class="text-[11px] text-slate-400 mt-1">Legally bound offline license signatures per hospital entity.</p>
-                    </div>
-                    <div class="glass-panel rounded-2xl p-4 border border-white/5">
-                        <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider block mb-1">Performance</span>
-                        <span class="text-sm font-extrabold text-white">Ultra-Low RAM Footprint</span>
-                        <p class="text-[11px] text-slate-400 mt-1">Optimized daemon runs smoothly in ~120 MB RAM.</p>
-                    </div>
-                    <div class="glass-panel rounded-2xl p-4 border border-white/5">
-                        <span class="text-xs text-purple-400 font-bold uppercase tracking-wider block mb-1">Deployment</span>
-                        <span class="text-sm font-extrabold text-white">Zero Python Requirement</span>
-                        <p class="text-[11px] text-slate-400 mt-1">Bundles all ReportLab fonts and binaries out of the box.</p>
-                    </div>
-                </div>
+                <!-- Clean 3-Card Product Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+                    <a href="#his-lite" class="group block bg-[#F5F5F7] hover:bg-[#ECECEF] rounded-2xl p-6 transition-colors">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071E3]">Available Now • v1.0.0</span>
+                        <h2 class="text-xl font-semibold text-[#1D1D1F] mt-1.5 display-tight">TReX HIS Lite</h2>
+                        <p class="text-[14px] text-[#6E6E73] mt-2 leading-relaxed">
+                            OP reception, billing, 2D Echo cardiology reporting, and attached pharmacy in one fast workstation installer.
+                        </p>
+                        <span class="inline-flex items-center text-[13px] font-medium text-[#0071E3] mt-4 group-hover:underline">
+                            Learn more &rsaquo;
+                        </span>
+                    </a>
 
-            </div>
-        </section>
+                    <a href="#his-enterprise" class="group block bg-[#F5F5F7] hover:bg-[#ECECEF] rounded-2xl p-6 transition-colors">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#6E6E73]">Hospital Network</span>
+                        <h2 class="text-xl font-semibold text-[#1D1D1F] mt-1.5 display-tight">TReX HIS Enterprise</h2>
+                        <p class="text-[14px] text-[#6E6E73] mt-2 leading-relaxed">
+                            Multi-terminal IPD ward management, operation theater scheduling, EMR, and central billing for 50–500+ beds.
+                        </p>
+                        <span class="inline-flex items-center text-[13px] font-medium text-[#0071E3] mt-4 group-hover:underline">
+                            View specifications &rsaquo;
+                        </span>
+                    </a>
 
-        <!-- SOFTWARE SUITE CATALOG (3 PRODUCTS) -->
-        <section id="software-suite" class="py-24 border-t border-white/[0.06] bg-black/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-20">
-                    <span class="text-xs font-black uppercase tracking-widest text-[#00D4FF]">Product Catalog</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">
-                        The T-ReX Clinical Software Suite
-                    </h2>
-                    <p class="text-slate-400 text-sm sm:text-base">
-                        Specialized, interconnected software solutions designed for outpatient clinics, diagnostic pathology centers, and full-scale inpatient multi-specialty hospitals.
-                    </p>
-                </div>
-
-                <div class="space-y-16">
-
-                    <!-- ================= PRODUCT 1: TReX HIS Lite ================= -->
-                    <div id="his-lite" class="glass-panel-elevated rounded-3xl p-8 sm:p-12 border border-[#00D4FF]/30 glow-cyan relative overflow-hidden">
-                        <div class="absolute -right-24 -top-24 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-[100px] pointer-events-none"></div>
-                        
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            
-                            <!-- Left: Info & Feature Bullets -->
-                            <div class="lg:col-span-7 space-y-6">
-                                <div class="flex flex-wrap items-center gap-3">
-                                    <span class="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                                        Available Now • v1.0.0
-                                    </span>
-                                    <span class="px-3 py-1 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/25 text-[#00D4FF] text-xs font-bold uppercase tracking-wider">
-                                        Standalone Workstation
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
-                                        <span>TReX HIS Lite</span>
-                                        <span class="text-xs font-mono px-2 py-0.5 rounded bg-white/10 text-slate-300 font-normal">Edition 2026</span>
-                                    </h3>
-                                    <p class="text-xs text-[#00D4FF] font-bold tracking-widest uppercase mt-1">Outpatient, Cardiology & Day Pharmacy Suite</p>
-                                </div>
-
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    A high-efficiency workstation suite tailored for high-throughput outpatient centers, specialized cardiology clinics, and attached day pharmacies. Designed to eliminate reception queues, streamline billing, and automate cardiology reporting.
-                                </p>
-
-                                <!-- Key Feature Grid -->
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <div><strong>Smart OP Reception:</strong> Instant token queueing, UHID assignment & dual-purpose slips.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <div><strong>Hospital Invoicing:</strong> Tariff master, multi-mode pay (Cash/UPI/Card), daily audit ledgers.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <div><strong>Cardiology & 2D Echo:</strong> 41+ hemodynamic metrics with automatic valvular formulas.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <div><strong>In-House Pharmacy:</strong> Batch tracking, expiry alerts, counter POS & doctor splits.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <div><strong>Offline HMAC Licensing:</strong> Permanent activation tied strictly to your hospital name.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <div><strong>Zero Python Setup:</strong> Full standalone installer with bundled vector fonts and QR engines.</div>
-                                    </div>
-                                </div>
-
-                                <!-- Action Buttons -->
-                                <div class="flex flex-wrap items-center gap-4 pt-4">
-                                    <a href="#downloads" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#00D4FF] to-[#0284C7] hover:scale-105 active:scale-95 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-[#00D4FF]/25 transition-all">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                                        <span>Download HIS Lite (v1.0.0)</span>
-                                    </a>
-                                    <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider transition-colors">
-                                        <span>Direct Setup File (30.75 MB)</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Right: Spec Box / Card -->
-                            <div class="lg:col-span-5 bg-black/40 rounded-2xl p-6 border border-white/10 space-y-4">
-                                <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block border-b border-white/10 pb-2">Technical Specifications</span>
-                                
-                                <div class="space-y-2.5 text-xs font-mono">
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Target Environment:</span>
-                                        <span class="text-white font-bold">Windows 10 / 11 / Server</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Package Architecture:</span>
-                                        <span class="text-[#00D4FF] font-bold">x86 / x64 Native Portable</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Database Engine:</span>
-                                        <span class="text-white font-bold">Embedded SQLite 3 (WAL Mode)</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Active RAM Usage:</span>
-                                        <span class="text-emerald-400 font-bold">~120 MB (Background Trim)</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Printer Support:</span>
-                                        <span class="text-white font-bold">Thermal POS (80mm/58mm) & A4</span>
-                                    </div>
-                                    <div class="flex justify-between py-1">
-                                        <span class="text-slate-400">Licensing Model:</span>
-                                        <span class="text-[#FF6B00] font-bold">Perpetual Offline HMAC-SHA256</span>
-                                    </div>
-                                </div>
-
-                                <div class="p-3 rounded-xl bg-[#00D4FF]/5 border border-[#00D4FF]/15 text-[11px] text-slate-300 leading-relaxed">
-                                    💡 <strong>Empty Canvas Ready:</strong> Pristine out-of-the-box state. Prompted for your hospital legal entity name and license key on first boot.
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- ================= PRODUCT 2: TReX HIS Enterprise ================= -->
-                    <div id="his-enterprise" class="glass-panel-elevated rounded-3xl p-8 sm:p-12 border border-[#FF6B00]/30 glow-orange relative overflow-hidden">
-                        <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-[#FF6B00]/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            
-                            <!-- Left: Spec Box / Card -->
-                            <div class="lg:col-span-5 order-2 lg:order-1 bg-black/40 rounded-2xl p-6 border border-white/10 space-y-4">
-                                <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block border-b border-white/10 pb-2">Enterprise Capabilities</span>
-                                
-                                <div class="space-y-2.5 text-xs font-mono">
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Bed Capacity:</span>
-                                        <span class="text-white font-bold">50 to 500+ Active Beds</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Concurrency:</span>
-                                        <span class="text-[#FF6B00] font-bold">Multi-Terminal LAN / VLAN</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Role-Based Access:</span>
-                                        <span class="text-white font-bold">Granular (Doctor, Nurse, Desk)</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Database Engine:</span>
-                                        <span class="text-white font-bold">Enterprise Cluster / PostgreSQL</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Backup Architecture:</span>
-                                        <span class="text-emerald-400 font-bold">Automated Hot-Snapshots</span>
-                                    </div>
-                                    <div class="flex justify-between py-1">
-                                        <span class="text-slate-400">Deployment:</span>
-                                        <span class="text-white font-bold">On-Premises Dedicated Server</span>
-                                    </div>
-                                </div>
-
-                                <div class="p-3 rounded-xl bg-[#FF6B00]/5 border border-[#FF6B00]/15 text-[11px] text-slate-300 leading-relaxed">
-                                    🛡️ <strong>Hospital Data Sovereignty:</strong> All electronic medical records stay strictly inside your physical server room.
-                                </div>
-                            </div>
-
-                            <!-- Right: Info & Modules -->
-                            <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
-                                <div class="flex flex-wrap items-center gap-3">
-                                    <span class="px-3 py-1 rounded-full bg-[#FF6B00]/15 border border-[#FF6B00]/30 text-[#FF6B00] text-xs font-black uppercase tracking-wider">
-                                        Enterprise Flagship
-                                    </span>
-                                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider">
-                                        Inpatient & Multi-Specialty
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                                        TReX HIS Enterprise
-                                    </h3>
-                                    <p class="text-xs text-[#FF6B00] font-bold tracking-widest uppercase mt-1">Full Inpatient, OT, EMR & Hospital Operations Suite</p>
-                                </div>
-
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    The complete hospital management operating system. Connects admissions, nursing stations, operation theaters, insurance desks, central pharmacies, and executive financial auditing into one unified on-premises network.
-                                </p>
-
-                                <!-- Key Feature Grid -->
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-[#FF6B00] font-bold">✓</span>
-                                        <div><strong>Inpatient Admission (IPD):</strong> Bed allocation, ward census, nurse handover & discharge summaries.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-[#FF6B00] font-bold">✓</span>
-                                        <div><strong>Complete EMR & EHR:</strong> Longitudinal patient timeline, doctor notes, allergies & prescriptions.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-[#FF6B00] font-bold">✓</span>
-                                        <div><strong>Operation Theater (OT):</strong> Surgical scheduling, surgeon notes, anesthesia charts & PACU tracking.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-[#FF6B00] font-bold">✓</span>
-                                        <div><strong>TPA & Insurance Claims:</strong> Pre-authorization packets, policy coverage splits & claim ledgers.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-[#FF6B00] font-bold">✓</span>
-                                        <div><strong>Emergency & Triage (ER):</strong> Priority acuity scoring, casualty tracking & crash cart logs.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-[#FF6B00] font-bold">✓</span>
-                                        <div><strong>Central Store & CSSD:</strong> Departmental indenting, vendor purchase orders & inventory audits.</div>
-                                    </div>
-                                </div>
-
-                                <!-- Action Buttons -->
-                                <div class="flex flex-wrap items-center gap-4 pt-4">
-                                    <a href="#contact" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#EA580C] hover:scale-105 active:scale-95 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-[#FF6B00]/25 transition-all">
-                                        <span>Request Enterprise Deployment</span>
-                                        <span>→</span>
-                                    </a>
-                                    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider transition-colors">
-                                        <span>Schedule Live Demo</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- ================= PRODUCT 3: TReXLab Pro ================= -->
-                    <div id="lab-pro" class="glass-panel-elevated rounded-3xl p-8 sm:p-12 border border-purple-500/30 glow-purple relative overflow-hidden">
-                        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            
-                            <!-- Left: Info & Modules -->
-                            <div class="lg:col-span-7 space-y-6">
-                                <div class="flex flex-wrap items-center gap-3">
-                                    <span class="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-400 text-xs font-black uppercase tracking-wider">
-                                        Specialized Diagnostic Suite
-                                    </span>
-                                    <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider">
-                                        LIS & Analyzer Automation
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                                        TReXLab Pro
-                                    </h3>
-                                    <p class="text-xs text-purple-400 font-bold tracking-widest uppercase mt-1">Laboratory Information System (LIS) & Pathology Automation</p>
-                                </div>
-
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    An industrial-strength laboratory diagnostic information system built for clinical pathology centers, blood collection networks, and hospital laboratories. Integrates bidirectional auto-analyzer interfacing, barcode specimen accessioning, and digital report signing.
-                                </p>
-
-                                <!-- Key Feature Grid -->
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-purple-400 font-bold">✓</span>
-                                        <div><strong>Analyzer Interfacing:</strong> Bi-directional ASTM / HL7 serial and TCP socket interfaces.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-purple-400 font-bold">✓</span>
-                                        <div><strong>Barcoded Accessioning:</strong> Barcode label generation for vacutainers, slides, and sample batches.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-purple-400 font-bold">✓</span>
-                                        <div><strong>Auto-Normal Ranges:</strong> Dynamic age and gender-adjusted reference ranges with delta checks.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-purple-400 font-bold">✓</span>
-                                        <div><strong>QR-Verified PDF Reports:</strong> Tamper-evident cryptographic QR code on patient reports.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-purple-400 font-bold">✓</span>
-                                        <div><strong>Dual Digital Signatures:</strong> Pathologist and lab technologist co-signing workflows.</div>
-                                    </div>
-                                    <div class="flex items-start gap-2.5 text-xs text-slate-200">
-                                        <span class="text-purple-400 font-bold">✓</span>
-                                        <div><strong>Automated Dispatch:</strong> Automated WhatsApp & SMS delivery directly upon pathologist sign-off.</div>
-                                    </div>
-                                </div>
-
-                                <!-- Action Buttons -->
-                                <div class="flex flex-wrap items-center gap-4 pt-4">
-                                    <a href="#contact" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:scale-105 active:scale-95 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-purple-500/25 transition-all">
-                                        <span>Inquire About TReXLab Pro</span>
-                                        <span>→</span>
-                                    </a>
-                                    <a href="#matrix" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider transition-colors">
-                                        <span>Compare with HIS Suite</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Right: Spec Box / Card -->
-                            <div class="lg:col-span-5 bg-black/40 rounded-2xl p-6 border border-white/10 space-y-4">
-                                <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block border-b border-white/10 pb-2">Laboratory Protocol Architecture</span>
-                                
-                                <div class="space-y-2.5 text-xs font-mono">
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Interface Protocols:</span>
-                                        <span class="text-purple-400 font-bold">ASTM 1394 / HL7 v2.x</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Specimen Types:</span>
-                                        <span class="text-white font-bold">Serum, Plasma, Urine, CSF, Swab</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Delta Check Window:</span>
-                                        <span class="text-white font-bold">Configurable (24h to 90d)</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Critical Alert System:</span>
-                                        <span class="text-emerald-400 font-bold">Visual & Audio Panic Flags</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-white/5">
-                                        <span class="text-slate-400">Report Formats:</span>
-                                        <span class="text-white font-bold">Vector PDF, Thermal, NABL Styler</span>
-                                    </div>
-                                    <div class="flex justify-between py-1">
-                                        <span class="text-slate-400">Sample Archive:</span>
-                                        <span class="text-white font-bold">Rack & Freezer Slot Mapping</span>
-                                    </div>
-                                </div>
-
-                                <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-500/15 text-[11px] text-slate-300 leading-relaxed">
-                                    🧪 <strong>Seamless Interop:</strong> TReXLab Pro can run standalone or interconnect seamlessly with TReX HIS Lite and TReX HIS Enterprise.
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                    <a href="#lab-pro" class="group block bg-[#F5F5F7] hover:bg-[#ECECEF] rounded-2xl p-6 transition-colors">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#6E6E73]">Diagnostic LIS</span>
+                        <h2 class="text-xl font-semibold text-[#1D1D1F] mt-1.5 display-tight">TReXLab Pro</h2>
+                        <p class="text-[14px] text-[#6E6E73] mt-2 leading-relaxed">
+                            Bi-directional analyzer interfacing, barcoded sample tracking, and verified PDF pathology reporting.
+                        </p>
+                        <span class="inline-flex items-center text-[13px] font-medium text-[#0071E3] mt-4 group-hover:underline">
+                            View specifications &rsaquo;
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- SOFTWARE COMPARISON MATRIX -->
-        <section id="matrix" class="py-24 border-t border-white/[0.06]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-xs font-black uppercase tracking-widest text-[#00D4FF]">Feature Matrix</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2 mb-3">
-                        Compare Software Editions
+        <!-- CORE ARCHITECTURE STRIP -->
+        <section class="py-12 bg-[#F5F5F7] border-y border-[#E5E5EA]">
+            <div class="max-w-[1080px] mx-auto px-5 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <div>
+                    <h3 class="text-[14px] font-semibold text-[#1D1D1F]">100% On-Premises</h3>
+                    <p class="text-[13px] text-[#6E6E73] mt-1 leading-relaxed">Patient records stay strictly on your local computer or LAN server.</p>
+                </div>
+                <div>
+                    <h3 class="text-[14px] font-semibold text-[#1D1D1F]">Offline Licensing</h3>
+                    <p class="text-[13px] text-[#6E6E73] mt-1 leading-relaxed">Signed locally with HMAC-SHA256 for permanent facility activation.</p>
+                </div>
+                <div>
+                    <h3 class="text-[14px] font-semibold text-[#1D1D1F]">Lightweight Footprint</h3>
+                    <p class="text-[13px] text-[#6E6E73] mt-1 leading-relaxed">Runs smoothly on standard clinic PCs (~120 MB memory footprint).</p>
+                </div>
+                <div>
+                    <h3 class="text-[14px] font-semibold text-[#1D1D1F]">Zero Setup Hassle</h3>
+                    <p class="text-[13px] text-[#6E6E73] mt-1 leading-relaxed">Includes runtime, PDF vector fonts, and clinical templates out of the box.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT DETAILS -->
+        <section id="software-suite" class="bg-white">
+
+            <!-- 1. TReX HIS Lite -->
+            <div id="his-lite" class="py-20 sm:py-24 border-b border-[#E5E5EA]">
+                <div class="max-w-[1080px] mx-auto px-5 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-7">
+                        <p class="text-[12px] font-semibold uppercase tracking-wider text-[#0071E3] mb-2">
+                            Edition 01 • Instant Download
+                        </p>
+                        <h2 class="display-tight text-3xl sm:text-4xl font-bold text-[#1D1D1F]">
+                            TReX HIS Lite
+                        </h2>
+                        <p class="text-[17px] text-[#6E6E73] mt-3 leading-relaxed">
+                            Designed for outpatient clinics, cardiology centers, and attached day pharmacies that want fast billing and reporting without server complexity.
+                        </p>
+
+                        <ul class="mt-7 space-y-3 text-[14px] text-[#1D1D1F]">
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Unified UHID Patient Flow:</strong> One patient record connects OP slips, diagnostic/echo billing, and pharmacy dispensing.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Hospital Billing & Audit Ledger:</strong> Fast tariff billing, Cash/UPI/Card split tracking, and daily financial reports.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Cardiology & 2D Echo Engine:</strong> 41+ hemodynamic metrics with pre-printed and full-page PDF reports.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Attached Pharmacy Counter:</strong> Strip and loose-tablet sales, batch tracking, expiry alerts, and WhatsApp bill dispatch.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Safe OTA & Dirty Upgrades:</strong> Software updates preserve all hospital records, licenses, and settings automatically.</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 flex flex-wrap items-center gap-4">
+                            <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white text-[14px] font-medium transition-colors">
+                                Download Setup.exe (30.75 MB)
+                            </a>
+                            <a href="#downloads" class="text-[14px] font-medium text-[#0071E3] hover:underline">
+                                View checksum &amp; release details &rsaquo;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-[#F5F5F7] rounded-2xl p-6 sm:p-7">
+                        <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[#6E6E73] pb-3 border-b border-[#D2D2D7]">
+                            Technical Specifications
+                        </h3>
+                        <dl class="divide-y divide-[#E5E5EA] text-[13px]">
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Version</dt>
+                                <dd class="font-medium text-[#1D1D1F] font-mono">v1.0.0</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Supported OS</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Windows 10 / 11 / Server</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Database</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Embedded SQLite (WAL)</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Memory Usage</dt>
+                                <dd class="font-medium text-[#1D1D1F]">~120 MB</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Printing</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Thermal (80mm/58mm) &amp; A4</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Activation</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Offline HMAC-SHA256 Key</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. TReX HIS Enterprise -->
+            <div id="his-enterprise" class="py-20 sm:py-24 bg-[#F5F5F7] border-b border-[#E5E5EA]">
+                <div class="max-w-[1080px] mx-auto px-5 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-5 order-2 lg:order-1 bg-white rounded-2xl p-6 sm:p-7 border border-[#E5E5EA]">
+                        <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[#6E6E73] pb-3 border-b border-[#E5E5EA]">
+                            Hospital Network Profile
+                        </h3>
+                        <dl class="divide-y divide-[#E5E5EA] text-[13px]">
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Capacity</dt>
+                                <dd class="font-medium text-[#1D1D1F]">50 to 500+ Beds</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Terminals</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Multi-Terminal LAN / VLAN</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Access Control</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Doctor, Nurse &amp; Billing Roles</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Database Engine</dt>
+                                <dd class="font-medium text-[#1D1D1F]">PostgreSQL Cluster</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Backups</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Automated Hot Snapshots</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Deployment</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Dedicated On-Premises Server</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <p class="text-[12px] font-semibold uppercase tracking-wider text-[#6E6E73] mb-2">
+                            Edition 02 • Full Hospital System
+                        </p>
+                        <h2 class="display-tight text-3xl sm:text-4xl font-bold text-[#1D1D1F]">
+                            TReX HIS Enterprise
+                        </h2>
+                        <p class="text-[17px] text-[#6E6E73] mt-3 leading-relaxed">
+                            Built for multi-specialty hospitals connecting reception, wards, nursing stations, operation theaters, insurance desks, and central stores.
+                        </p>
+
+                        <ul class="mt-7 space-y-3 text-[14px] text-[#1D1D1F]">
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Inpatient &amp; Ward Management:</strong> Bed allocation, ward census, nursing handover, and discharge summaries.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Electronic Medical Records:</strong> Complete patient history, clinical notes, vitals, allergies, and prescriptions.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Operation Theater &amp; Triage:</strong> OT scheduling, surgical notes, anesthesia logs, and emergency acuity scoring.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>TPA &amp; Insurance Desk:</strong> Pre-authorization tracking, coverage splits, and claim settlement ledgers.</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 flex flex-wrap items-center gap-4">
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#1D1D1F] hover:bg-[#333336] text-white text-[14px] font-medium transition-colors">
+                                Request Enterprise Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. TReXLab Pro -->
+            <div id="lab-pro" class="py-20 sm:py-24 bg-white border-b border-[#E5E5EA]">
+                <div class="max-w-[1080px] mx-auto px-5 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-7">
+                        <p class="text-[12px] font-semibold uppercase tracking-wider text-[#6E6E73] mb-2">
+                            Edition 03 • Diagnostic LIS
+                        </p>
+                        <h2 class="display-tight text-3xl sm:text-4xl font-bold text-[#1D1D1F]">
+                            TReXLab Pro
+                        </h2>
+                        <p class="text-[17px] text-[#6E6E73] mt-3 leading-relaxed">
+                            Dedicated laboratory information software for diagnostic centers and hospital pathology departments, from sample collection to automated report delivery.
+                        </p>
+
+                        <ul class="mt-7 space-y-3 text-[14px] text-[#1D1D1F]">
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Analyzer Interfacing:</strong> Bi-directional ASTM and HL7 serial and TCP/IP machine integration.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Barcoded Accessioning:</strong> Sample tracking labels for vacutainers, slides, and collection batches.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>Age &amp; Gender Reference Ranges:</strong> Automatic delta checks, panic value alerts, and dual digital sign-off.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] font-semibold">—</span>
+                                <span><strong>QR-Verified Reports:</strong> Vector PDF reports with WhatsApp and SMS dispatch upon verification.</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 flex flex-wrap items-center gap-4">
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#1D1D1F] hover:bg-[#333336] text-white text-[14px] font-medium transition-colors">
+                                Inquire About TReXLab Pro
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-[#F5F5F7] rounded-2xl p-6 sm:p-7">
+                        <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[#6E6E73] pb-3 border-b border-[#D2D2D7]">
+                            Laboratory Specifications
+                        </h3>
+                        <dl class="divide-y divide-[#E5E5EA] text-[13px]">
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Protocols</dt>
+                                <dd class="font-medium text-[#1D1D1F] font-mono">ASTM 1394 / HL7 v2.x</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Sample Types</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Serum, Plasma, Urine, CSF</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Delta Check</dt>
+                                <dd class="font-medium text-[#1D1D1F]">24h to 90d configurable</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Critical Values</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Visual &amp; audio flags</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Output Formats</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Vector PDF, Thermal</dd>
+                            </div>
+                            <div class="py-3 flex justify-between gap-4">
+                                <dt class="text-[#6E6E73]">Compatibility</dt>
+                                <dd class="font-medium text-[#1D1D1F]">Standalone or HIS-linked</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- COMPARISON MATRIX -->
+        <section id="matrix" class="py-20 sm:py-24 bg-[#F5F5F7] border-b border-[#E5E5EA]">
+            <div class="max-w-[1080px] mx-auto px-5 sm:px-6">
+                <div class="text-center max-w-xl mx-auto mb-12">
+                    <h2 class="display-tight text-3xl sm:text-4xl font-bold text-[#1D1D1F]">
+                        Compare editions
                     </h2>
-                    <p class="text-slate-400 text-sm">
-                        Find the ideal software architecture tailored to your clinical facility scale and workflow.
+                    <p class="text-[15px] text-[#6E6E73] mt-2">
+                        Choose the configuration that matches your facility size and clinical workflow.
                     </p>
                 </div>
 
-                <div class="glass-panel rounded-3xl border border-white/10 overflow-x-auto">
-                    <table class="w-full text-left text-xs border-collapse min-w-[700px]">
+                <div class="bg-white rounded-2xl border border-[#E5E5EA] overflow-x-auto">
+                    <table class="w-full text-left text-[13px] border-collapse min-w-[680px]">
                         <thead>
-                            <tr class="border-b border-white/10 bg-white/[0.02]">
-                                <th class="p-5 font-bold text-slate-400 uppercase tracking-wider">Module / Capability</th>
-                                <th class="p-5 font-extrabold text-[#00D4FF] text-sm">TReX HIS Lite</th>
-                                <th class="p-5 font-extrabold text-[#FF6B00] text-sm">TReX HIS Enterprise</th>
-                                <th class="p-5 font-extrabold text-purple-400 text-sm">TReXLab Pro</th>
+                            <tr class="border-b border-[#E5E5EA]">
+                                <th class="p-4 sm:p-5 font-semibold text-[#6E6E73] w-[34%]">Capability</th>
+                                <th class="p-4 sm:p-5 font-semibold text-[#1D1D1F]">TReX HIS Lite</th>
+                                <th class="p-4 sm:p-5 font-semibold text-[#1D1D1F]">TReX HIS Enterprise</th>
+                                <th class="p-4 sm:p-5 font-semibold text-[#1D1D1F]">TReXLab Pro</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-white/5 font-medium">
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Target Facility Scale</td>
-                                <td class="p-4 text-slate-300">OPD & Specialty Clinics</td>
-                                <td class="p-4 text-slate-300">Multi-Specialty Hospitals (50-500+ Beds)</td>
-                                <td class="p-4 text-slate-300">Pathology Labs & Collection Centers</td>
+                        <tbody class="divide-y divide-[#E5E5EA]">
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Best suited for</td>
+                                <td class="p-4 text-[#6E6E73]">Clinics &amp; Cardiology OPD</td>
+                                <td class="p-4 text-[#6E6E73]">Multi-Specialty Hospitals</td>
+                                <td class="p-4 text-[#6E6E73]">Pathology Laboratories</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Patient Reception & Queue Tokens</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Included (Rapid)</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Included (Multi-Counter)</td>
-                                <td class="p-4 text-slate-500">Sample Registration Only</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">OP Reception &amp; Queue</td>
+                                <td class="p-4 text-[#1D1D1F]">Included</td>
+                                <td class="p-4 text-[#1D1D1F]">Multi-counter</td>
+                                <td class="p-4 text-[#6E6E73]">Sample registration</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Hospital Invoicing & Daily Ledger</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Included (Thermal & A4)</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Included (Corporate & TPA)</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Diagnostic Test Invoicing</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Billing &amp; Financial Ledger</td>
+                                <td class="p-4 text-[#1D1D1F]">Included</td>
+                                <td class="p-4 text-[#1D1D1F]">Included + TPA</td>
+                                <td class="p-4 text-[#1D1D1F]">Lab invoicing</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Inpatient Ward & Bed Census</td>
-                                <td class="p-4 text-slate-500">—</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Included (Real-Time Census)</td>
-                                <td class="p-4 text-slate-500">—</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Inpatient Ward &amp; Bed Census</td>
+                                <td class="p-4 text-[#86868B]">—</td>
+                                <td class="p-4 text-[#1D1D1F]">Included</td>
+                                <td class="p-4 text-[#86868B]">—</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Cardiology & 2D Echocardiogram Engine</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Full 41-Metric Suite</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Integrated Department Module</td>
-                                <td class="p-4 text-slate-500">—</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Cardiology &amp; 2D Echo</td>
+                                <td class="p-4 text-[#1D1D1F]">41-Metric Suite</td>
+                                <td class="p-4 text-[#1D1D1F]">Integrated Module</td>
+                                <td class="p-4 text-[#86868B]">—</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Clinical Pathology & Diagnostic LIS</td>
-                                <td class="p-4 text-slate-500">Basic Slips</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Integrated Hospital Lab</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Advanced ASTM/HL7 Interfaced</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Analyzer Interfacing (ASTM / HL7)</td>
+                                <td class="p-4 text-[#86868B]">—</td>
+                                <td class="p-4 text-[#6E6E73]">Optional Bridge</td>
+                                <td class="p-4 text-[#1D1D1F]">Built-in</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Auto-Analyzer Bi-Directional Interfacing</td>
-                                <td class="p-4 text-slate-500">—</td>
-                                <td class="p-4 text-slate-300">Optional Bridge</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Built-in Socket/Serial Protocol</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Pharmacy POS &amp; Stock</td>
+                                <td class="p-4 text-[#1D1D1F]">Included</td>
+                                <td class="p-4 text-[#1D1D1F]">Multi-store</td>
+                                <td class="p-4 text-[#86868B]">—</td>
                             </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Pharmacy Dispensation & POS</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Attached Day Pharmacy</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Multi-Warehouse & Indenting</td>
-                                <td class="p-4 text-slate-500">—</td>
-                            </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Offline HMAC-SHA256 Cryptography</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ 100% Offline Active</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Node-Locked / Floating Server</td>
-                                <td class="p-4 text-emerald-400 font-bold">✓ Lab Entity Signed</td>
-                            </tr>
-                            <tr class="hover:bg-white/[0.02] transition-colors">
-                                <td class="p-4 font-bold text-white">Delivery Model</td>
-                                <td class="p-4 text-[#00D4FF] font-bold">Instant Download (.exe)</td>
-                                <td class="p-4 text-[#FF6B00] font-bold">Custom Enterprise Deployment</td>
-                                <td class="p-4 text-purple-400 font-bold">Licensed Laboratory Package</td>
+                            <tr>
+                                <td class="p-4 font-medium text-[#1D1D1F]">Delivery</td>
+                                <td class="p-4 font-medium text-[#0071E3]">Direct Setup (.exe)</td>
+                                <td class="p-4 text-[#6E6E73]">On-site deployment</td>
+                                <td class="p-4 text-[#6E6E73]">Licensed setup</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </section>
 
-        <!-- DOWNLOAD HUB (HIS LITE) -->
-        <section id="downloads" class="py-24 border-t border-white/[0.06] bg-black/30">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="relative glass-panel rounded-3xl p-8 sm:p-12 border border-[#00D4FF]/30 glow-cyan overflow-hidden">
-                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-[#00D4FF]/10 rounded-full blur-[80px] pointer-events-none"></div>
-
-                    <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-                        <div class="space-y-4 text-center lg:text-left max-w-xl">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#00D4FF]/10 border border-[#00D4FF]/30 text-[#00D4FF] text-xs font-black uppercase tracking-wider">
-                                Official Verified Distribution
-                            </div>
-                            <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-                                Download TReX HIS Lite (v1.0.0)
-                            </h3>
-                            <p class="text-sm text-slate-300 leading-relaxed">
-                                Complete Windows native setup package. Bundles embedded runtime, ReportLab vector typography, QR generation engine, and pristine clinical catalogs with zero Python requirement.
+        <!-- DOWNLOAD HUB -->
+        <section id="downloads" class="py-20 sm:py-24 bg-white border-b border-[#E5E5EA]">
+            <div class="max-w-[920px] mx-auto px-5 sm:px-6">
+                <div class="bg-[#F5F5F7] rounded-3xl p-8 sm:p-12 border border-[#E5E5EA]">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                        <div class="max-w-lg">
+                            <p class="text-[12px] font-semibold uppercase tracking-wider text-[#0071E3]">
+                                Official Windows Installer
+                            </p>
+                            <h2 class="display-tight text-3xl sm:text-4xl font-bold text-[#1D1D1F] mt-1.5">
+                                Download TReX HIS Lite
+                            </h2>
+                            <p class="text-[15px] text-[#6E6E73] mt-3 leading-relaxed">
+                                Standalone setup package with embedded runtime, vector PDF reporting, and clean clinical database ready for first-time activation.
                             </p>
 
-                            <!-- Metadata Info -->
-                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
-                                <div class="bg-black/40 p-2.5 rounded-xl border border-white/5">
-                                    <span class="text-slate-500 block text-[10px] uppercase font-bold">Version</span>
-                                    <span class="font-bold text-white font-mono">v1.0.0 (Base Release)</span>
+                            <div class="grid grid-cols-3 gap-3 mt-6 text-[13px]">
+                                <div class="bg-white rounded-xl p-3 border border-[#E5E5EA]">
+                                    <span class="block text-[11px] text-[#6E6E73]">Version</span>
+                                    <span class="font-semibold text-[#1D1D1F] font-mono">v1.0.0</span>
                                 </div>
-                                <div class="bg-black/40 p-2.5 rounded-xl border border-white/5">
-                                    <span class="text-slate-500 block text-[10px] uppercase font-bold">Package Size</span>
-                                    <span class="font-bold text-white font-mono">30.75 MB</span>
+                                <div class="bg-white rounded-xl p-3 border border-[#E5E5EA]">
+                                    <span class="block text-[11px] text-[#6E6E73]">Size</span>
+                                    <span class="font-semibold text-[#1D1D1F] font-mono">30.75 MB</span>
                                 </div>
-                                <div class="bg-black/40 p-2.5 rounded-xl border border-white/5 col-span-2 sm:col-span-1">
-                                    <span class="text-slate-500 block text-[10px] uppercase font-bold">OS Compatibility</span>
-                                    <span class="font-bold text-white">Windows 10 / 11 / Server</span>
+                                <div class="bg-white rounded-xl p-3 border border-[#E5E5EA]">
+                                    <span class="block text-[11px] text-[#6E6E73]">Platform</span>
+                                    <span class="font-semibold text-[#1D1D1F]">Windows</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Big Download Button -->
-                        <div class="flex flex-col items-center gap-3 w-full sm:w-auto">
-                            <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="w-full sm:w-64 py-5 px-8 rounded-2xl bg-gradient-to-r from-[#00D4FF] via-[#38BDF8] to-[#0284C7] hover:scale-105 active:scale-95 text-slate-950 font-black text-sm tracking-wide text-center shadow-2xl shadow-[#00D4FF]/30 transition-all flex items-center justify-center gap-3 cursor-pointer">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <div class="flex flex-col items-stretch md:items-center gap-2.5 flex-shrink-0">
+                            <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white text-[15px] font-medium transition-colors whitespace-nowrap">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
                                 <span>Download Setup.exe</span>
                             </a>
-                            <span class="text-[11px] text-slate-400 font-medium">Standalone • Zero Python Required</span>
+                            <span class="text-[12px] text-[#6E6E73] text-center">TReX_HIS_Lite_Setup.exe</span>
                         </div>
                     </div>
 
-                    <!-- Cryptographic SHA256 Verification Card -->
-                    <div class="mt-8 pt-6 border-t border-white/10">
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-black/40 p-3.5 rounded-2xl border border-white/5">
-                            <div class="min-w-0 flex-1">
-                                <span class="text-[10px] text-slate-500 uppercase font-black tracking-wider block">Cryptographic Checksum (SHA-256)</span>
-                                <code class="text-xs text-emerald-400 font-mono select-all truncate block">A9094ECC79CB1E9AB76EA24F0AA3DC2925889D7C45C5383575B93FA3BFB331F7</code>
-                            </div>
-                            <button onclick="copyChecksum()" id="copyHashBtn" class="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 flex-shrink-0 cursor-pointer">
-                                <span>📋</span>
-                                <span>Copy Hash</span>
-                            </button>
+                    <!-- Clean SHA-256 Bar -->
+                    <div class="mt-8 pt-6 border-t border-[#D2D2D7] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="min-w-0">
+                            <span class="block text-[11px] font-semibold uppercase tracking-wider text-[#6E6E73]">SHA-256 Checksum</span>
+                            <code class="text-[12px] text-[#1D1D1F] font-mono select-all break-all">A9094ECC79CB1E9AB76EA24F0AA3DC2925889D7C45C5383575B93FA3BFB331F7</code>
                         </div>
+                        <button type="button" onclick="copyChecksum()" id="copyHashBtn" class="px-4 py-1.5 rounded-full bg-white hover:bg-[#E5E5EA]/60 border border-[#D2D2D7] text-[12px] font-medium text-[#1D1D1F] transition-colors flex-shrink-0 cursor-pointer">
+                            Copy SHA-256
+                        </button>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- CONTACT / INQUIRY SECTION -->
-        <section id="contact" class="py-24 border-t border-white/[0.06]">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="w-16 h-16 rounded-2xl mx-auto mb-6 p-2 bg-gradient-to-br from-[#00D4FF]/20 to-[#FF6B00]/20 border border-white/10 flex items-center justify-center shadow-lg">
-                    <img src="assets/logo.png" alt="T-ReX Logo" class="w-full h-full object-contain">
+        <!-- CONTACT -->
+        <section id="contact" class="py-20 sm:py-24 bg-[#F5F5F7]">
+            <div class="max-w-[680px] mx-auto px-5 sm:px-6">
+                <div class="text-center mb-10">
+                    <h2 class="display-tight text-3xl sm:text-4xl font-bold text-[#1D1D1F]">
+                        Contact TReX Publishers
+                    </h2>
+                    <p class="text-[15px] text-[#6E6E73] mt-2">
+                        Request a license key, custom report layout, or on-premises hospital deployment.
+                    </p>
                 </div>
-                <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-                    Partner with T-ReX Publishers
-                </h3>
-                <p class="text-sm text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-                    Contact our clinical engineering desk to order customized hospital templates, request enterprise multi-terminal licenses, or schedule on-premises hospital deployment.
-                </p>
 
-                <div class="glass-panel rounded-3xl p-8 border border-white/10 text-left max-w-2xl mx-auto mb-10">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-[#E5E5EA]">
                     <form onsubmit="handleContactSubmit(event)" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Your Name *</label>
-                                <input type="text" id="contactName" required placeholder="e.g. Dr. Ramesh Kumar" class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs text-white outline-none focus:border-[#00D4FF]">
+                                <label for="contactName" class="block text-[12px] font-medium text-[#1D1D1F] mb-1.5">Your Name *</label>
+                                <input type="text" id="contactName" required placeholder="Dr. Ramesh Kumar" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#D2D2D7] text-[14px] text-[#1D1D1F] outline-none focus:border-[#0071E3]">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Hospital / Clinic Name *</label>
-                                <input type="text" id="contactHospital" required placeholder="e.g. City General Hospital" class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs text-white outline-none focus:border-[#00D4FF]">
+                                <label for="contactHospital" class="block text-[12px] font-medium text-[#1D1D1F] mb-1.5">Hospital / Clinic Name *</label>
+                                <input type="text" id="contactHospital" required placeholder="City General Hospital" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#D2D2D7] text-[14px] text-[#1D1D1F] outline-none focus:border-[#0071E3]">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Email / Phone *</label>
-                                <input type="text" id="contactInfo" required placeholder="e.g. doctor@hospital.com / +91 ..." class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs text-white outline-none focus:border-[#00D4FF]">
+                                <label for="contactInfo" class="block text-[12px] font-medium text-[#1D1D1F] mb-1.5">Email or Phone *</label>
+                                <input type="text" id="contactInfo" required placeholder="doctor@hospital.com / +91 ..." class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#D2D2D7] text-[14px] text-[#1D1D1F] outline-none focus:border-[#0071E3]">
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Product of Interest</label>
-                                <select id="contactProduct" class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs text-white outline-none focus:border-[#00D4FF]">
-                                    <option value="HIS_LITE">TReX HIS Lite (Workstation)</option>
-                                    <option value="HIS_ENTERPRISE">TReX HIS Enterprise (Full Hospital)</option>
-                                    <option value="LAB_PRO">TReXLab Pro (Diagnostic LIS)</option>
-                                    <option value="ALL">Complete Hospital & Lab Bundle</option>
+                                <label for="contactProduct" class="block text-[12px] font-medium text-[#1D1D1F] mb-1.5">Product</label>
+                                <select id="contactProduct" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#D2D2D7] text-[14px] text-[#1D1D1F] outline-none focus:border-[#0071E3]">
+                                    <option value="HIS_LITE">TReX HIS Lite</option>
+                                    <option value="HIS_ENTERPRISE">TReX HIS Enterprise</option>
+                                    <option value="LAB_PRO">TReXLab Pro</option>
+                                    <option value="ALL">Complete Hospital &amp; Lab Suite</option>
                                 </select>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Inquiry / Deployment Requirements</label>
-                            <textarea id="contactMessage" rows="3" placeholder="Tell us about your hospital bed capacity, departments, or custom requirements..." class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs text-white outline-none focus:border-[#00D4FF]"></textarea>
+                            <label for="contactMessage" class="block text-[12px] font-medium text-[#1D1D1F] mb-1.5">Notes</label>
+                            <textarea id="contactMessage" rows="3" placeholder="Tell us about your departments, bed count, or setup needs..." class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#D2D2D7] text-[14px] text-[#1D1D1F] outline-none focus:border-[#0071E3]"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#00D4FF] to-[#0284C7] text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-[#00D4FF]/20 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer">
-                            Send Inquiry to T-ReX Engineering
+                        <button type="submit" class="w-full py-3 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white text-[14px] font-medium transition-colors cursor-pointer">
+                            Send Inquiry
                         </button>
                     </form>
                 </div>
 
-                <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
-                    <a href="mailto:support@trexpublishers.com" class="px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white font-bold transition-colors flex items-center gap-2">
-                        <span>✉️</span>
-                        <span>support@trexpublishers.com</span>
-                    </a>
-                </div>
+                <p class="text-center text-[13px] text-[#6E6E73] mt-6">
+                    Direct email: <a href="mailto:support@trexpublishers.com" class="text-[#0071E3] hover:underline">support@trexpublishers.com</a>
+                </p>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/[0.06] bg-black/70 relative z-10 text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <img src="assets/logo.png" alt="T-ReX Logo" class="w-6 h-6 object-contain">
-                <div>
-                    <span class="font-extrabold text-slate-300">T-ReX Publishers</span>
-                    <span class="mx-2">•</span>
-                    <span>Engineering High-Throughput Clinical Operating Systems</span>
-                </div>
+    <footer class="py-8 bg-white border-t border-[#E5E5EA] text-[12px] text-[#6E6E73]">
+        <div class="max-w-[1080px] mx-auto px-5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="TReX Publishers" class="w-5 h-5 object-contain">
+                <span class="font-medium text-[#1D1D1F]">TReX Publishers</span>
+                <span>•</span>
+                <span>Clinical &amp; Healthcare Software</span>
             </div>
-            <div class="text-center sm:text-right">
-                © 2026 T-ReX Publishers. All rights reserved.
-            </div>
+            <div>&copy; 2026 TReX Publishers. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
     <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            if (nav) nav.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            if (nav) nav.classList.add('hidden');
+        }
+
         function copyChecksum() {
             const hash = "A9094ECC79CB1E9AB76EA24F0AA3DC2925889D7C45C5383575B93FA3BFB331F7";
             navigator.clipboard.writeText(hash).then(() => {
                 const btn = document.getElementById('copyHashBtn');
-                btn.innerHTML = '<span>✓</span> <span>Copied!</span>';
-                btn.classList.add('text-emerald-400', 'border-emerald-500/40');
+                if (!btn) return;
+                btn.textContent = 'Copied';
                 setTimeout(() => {
-                    btn.innerHTML = '<span>📋</span> <span>Copy Hash</span>';
-                    btn.classList.remove('text-emerald-400', 'border-emerald-500/40');
-                }, 2500);
+                    btn.textContent = 'Copy SHA-256';
+                }, 2200);
             });
         }
 
@@ -813,7 +656,7 @@
             const msg = document.getElementById('contactMessage').value;
 
             const mailtoUrl = `mailto:support@trexpublishers.com?subject=TReX%20Publishers%20Inquiry%20from%20${encodeURIComponent(hospital)}&body=${encodeURIComponent(
-                `Name: ${name}\nHospital: ${hospital}\nContact: ${info}\nProduct of Interest: ${product}\n\nRequirements:\n${msg}`
+                `Name: ${name}\nHospital: ${hospital}\nContact: ${info}\nProduct: ${product}\n\nNotes:\n${msg}`
             )}`;
             window.location.href = mailtoUrl;
         }
