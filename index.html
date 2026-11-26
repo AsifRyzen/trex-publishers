@@ -225,7 +225,7 @@
 
                         <div class="mt-8 flex flex-wrap items-center gap-4">
                             <a href="downloads/TReX_HIS_Lite_Setup.exe" download class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white text-[14px] font-medium transition-colors">
-                                Download Setup.exe (30.75 MB)
+                                Download Setup.exe (30.80 MB)
                             </a>
                             <a href="#downloads" class="text-[14px] font-medium text-[#0071E3] hover:underline">
                                 View checksum &amp; release details &rsaquo;
@@ -517,7 +517,7 @@
                                 </div>
                                 <div class="bg-white rounded-xl p-3 border border-[#E5E5EA]">
                                     <span class="block text-[11px] text-[#6E6E73]">Size</span>
-                                    <span class="font-semibold text-[#1D1D1F] font-mono">30.75 MB</span>
+                                    <span class="font-semibold text-[#1D1D1F] font-mono">30.80 MB</span>
                                 </div>
                                 <div class="bg-white rounded-xl p-3 border border-[#E5E5EA]">
                                     <span class="block text-[11px] text-[#6E6E73]">Platform</span>
@@ -541,7 +541,7 @@
                     <div class="mt-8 pt-6 border-t border-[#D2D2D7] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div class="min-w-0">
                             <span class="block text-[11px] font-semibold uppercase tracking-wider text-[#6E6E73]">SHA-256 Checksum</span>
-                            <code class="text-[12px] text-[#1D1D1F] font-mono select-all break-all">A9094ECC79CB1E9AB76EA24F0AA3DC2925889D7C45C5383575B93FA3BFB331F7</code>
+                            <code class="text-[12px] text-[#1D1D1F] font-mono select-all break-all">935C832FAD6E5368D77663A09DA91C90BBC7DBDCEE085283C41B580D18F414F0</code>
                         </div>
                         <button type="button" onclick="copyChecksum()" id="copyHashBtn" class="px-4 py-1.5 rounded-full bg-white hover:bg-[#E5E5EA]/60 border border-[#D2D2D7] text-[12px] font-medium text-[#1D1D1F] transition-colors flex-shrink-0 cursor-pointer">
                             Copy SHA-256
@@ -636,7 +636,7 @@
         }
 
         function copyChecksum() {
-            const hash = "A9094ECC79CB1E9AB76EA24F0AA3DC2925889D7C45C5383575B93FA3BFB331F7";
+            const hash = "935C832FAD6E5368D77663A09DA91C90BBC7DBDCEE085283C41B580D18F414F0";
             navigator.clipboard.writeText(hash).then(() => {
                 const btn = document.getElementById('copyHashBtn');
                 if (!btn) return;
